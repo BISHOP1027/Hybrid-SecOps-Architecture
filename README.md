@@ -8,7 +8,7 @@
 
 ## 🏗️ Architecture Design
 본 프로젝트는 하이브리드 환경에서의 통합 보안 관제 시스템을 목표로 설계되었습니다.
-![Architecture Diagram](./docs/images/Architecture.png)
+![Architecture Diagram](./docs/images/architecture.png)
 
 
 
