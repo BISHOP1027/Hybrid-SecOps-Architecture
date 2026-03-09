@@ -57,12 +57,6 @@
   * 기존 구조적 매칭 대신 `<match>` 및 정규표현식(`<pcre2>`) 태그를 활용하여 **원문 로그(Full Log) 베이스의 스캐닝 방식으로 파서(Parser) 로직 전면 수정**.
 * **Result**: SQLi, XSS, OS Command Injection 등 치명적인 웹 공격만을 특정(Level 12 이상)하여 분리해내는 맞춤형 SIEM 탐지 룰 구현 성공.
 
-### 💡 Issue 2: 위협 탐지 기반 능동 대응(Active Response) 자동화 체계 마련
-* **Background**: WAF가 공격을 차단(`403`)하더라도 공격자는 계속해서 다른 취약점을 스캐닝하는 상황 발생. 탐지 시 수동으로 방화벽을 차단하는 것은 SecOps 관점에서 비효율적.
-* **Implementation**: 
-  * Wazuh Manager에서 특정 고위험 룰(예: Rule ID 100201 - SQL Injection)이 발동될 경우 트리거되는 Active Response 정책 수립.
-  * 에이전트가 설치된 웹 서버의 `iptables` 네트워크 방화벽을 자동으로 제어하여, **위협 식별 즉시 해당 공격자 IP를 600초간 완전 격리(Drop)**하는 자동화 파이프라인 완성.
-
 ---
 
 ## ⚙️ Tech Stack
